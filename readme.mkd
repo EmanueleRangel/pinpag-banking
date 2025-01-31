@@ -34,3 +34,90 @@ Este é um sistema de **conta bancária** simples, construído com **ASP.NET Cor
    ```bash
    git clone https://github.com/usuario/nome-do-repositorio.git
    cd nome-do-repositorio
+Instalar dependências: No diretório do projeto, execute:
+
+ ```bash
+dotnet restore
+Executar a aplicação: Para rodar a API localmente, use o seguinte comando:
+ ```
+
+ ```bash
+dotnet run
+ ```
+
+A API estará disponível em http://localhost:5000 por padrão.
+
+Testar os endpoints: Use um cliente HTTP como Postman ou Insomnia para testar os seguintes endpoints:
+
+POST /api/bankaccount: Criar uma nova conta bancária.
+POST /api/bankaccount/deposit: Realizar um depósito.
+POST /api/bankaccount/withdraw: Realizar um saque.
+GET /api/bankaccount/{cpf}: Consultar o saldo de uma conta.
+GET /api/bankaccount/{cpf}/transactions: Listar as transações de uma conta.
+GET /api/bankaccount/report: Gerar um relatório simples de transações de um período.
+Rodando o projeto com Docker
+Para rodar a aplicação com Docker, siga os seguintes passos:
+
+Construir a imagem Docker: No diretório raiz do projeto, execute o seguinte comando para construir a imagem Docker:
+
+ ```bash
+docker build -t banking-system .
+ ```
+
+Rodar o container: Depois de construir a imagem, inicie o container:
+
+ ```bash
+docker run -d -p 5000:5000 banking-system
+ ```
+A API estará disponível em http://localhost:5000.
+
+Rodando os Testes Unitários
+Para rodar os testes unitários do projeto:
+
+Navegar para o diretório de testes:
+
+ ```bash
+cd tests/BankingSystem.Tests
+ ```
+Rodar os testes: Execute o comando:
+
+ ```bash
+dotnet test
+ ```
+Estrutura do Projeto
+O projeto segue a seguinte estrutura de diretórios:
+
+
+BankingSystem/
+├── Controllers/            # Controladores da API
+│   ├── BankAccountController.cs
+│   └── TransactionController.cs
+├── Models/                 # Modelos de dados (Account, Transaction, etc.)
+│   ├── Account.cs
+│   └── Transaction.cs
+├── Services/               # Lógica de negócios (serviços)
+│   ├── BankAccountService.cs
+│   └── TransactionService.cs
+├── BankingSystem.sln       # Solução do projeto
+├── Dockerfile              # Arquivo Dockerfile
+└── docker-compose.yml      # Arquivo Docker Compose
+
+
+Tecnologias Utilizadas
+
+ASP.NET Core: Framework para construção de APIs.
+Entity Framework Core: ORM para acesso ao banco de dados.
+xUnit: Framework para testes unitários.
+Docker: Containerização da aplicação.
+SQL Server (ou Banco de Dados Simulado): Para persistência de dados.
+
+
+Contribuindo
+
+Fork o repositório.
+Crie uma nova branch para suas alterações.
+Envie um pull request explicando as modificações realizadas.
+
+
+Licença
+Este projeto está licenciado sob a MIT License.
