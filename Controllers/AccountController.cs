@@ -1,7 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using pinpag-banking.Models;
-using pinpag-banking.Services;
-using System;
 using System.Collections.Generic;
 
 namespace pinpag-banking.Controllers
@@ -10,16 +7,13 @@ namespace pinpag-banking.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        // Corrigindo a declaração da lista para List<Account> (não ListAccount)
         private static List<Account> Accounts = new List<Account>();
 
-        // Corrigindo o ponto e vírgula extra na assinatura do método CreateAccount
         [HttpPost]
         public IActionResult CreateAccount([FromBody] AccountDTO accountDto)
         {
             try
             {
-                // Usando a classe Account em vez de Account
                 var account = new Account(accountDto.ClientName, accountDto.CPF, accountDto.InitialBalance);
                 Accounts.Add(account);
                 return CreatedAtAction(nameof(GetAccount), new { cpf = account.CPF }, account);
