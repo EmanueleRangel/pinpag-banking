@@ -52,3 +52,4 @@ namespace YourProject.Services
         public int PageSize { get; set; } = 10;
     }
 }
+}

@@ -31,3 +31,4 @@
 /home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.pdb
 /home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.genruntimeconfig.cache
 /home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/ref/pinpag-banking.dll
+/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.sourcelink.json

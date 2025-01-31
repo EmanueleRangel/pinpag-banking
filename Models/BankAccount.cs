@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace pinpag-banking.Models
+namespace pinpag_banking.Models
 {
     public class BankAccount
     {
@@ -10,6 +11,7 @@ namespace pinpag-banking.Models
         public decimal Balance { get; set; }
 
         private static HashSet<string> RegisteredCPFs = new HashSet<string>();
+        private List<Transaction> TransactionHistory = new List<Transaction>(); // Adicionando a lista de transações
 
         public BankAccount(string clientName, string cpf, decimal? initialBalance = null)
         {
@@ -41,6 +43,8 @@ namespace pinpag-banking.Models
                 throw new ArgumentException("Deposit amount must be greater than 0.");
             }
             Balance += amount;
+            // Adicionando transação de depósito
+            TransactionHistory.Add(new Transaction { Amount = amount, Date = DateTime.Now, Type = "Deposit" });
         }
 
         public void Withdraw(decimal amount)
@@ -54,6 +58,8 @@ namespace pinpag-banking.Models
                 throw new ArgumentException("Insufficient balance.");
             }
             Balance -= amount;
+            // Adicionando transação de saque
+            TransactionHistory.Add(new Transaction { Amount = amount, Date = DateTime.Now, Type = "Withdrawal" });
         }
 
         public List<Transaction> GetTransactionHistory()
@@ -61,12 +67,20 @@ namespace pinpag-banking.Models
             return TransactionHistory;
         }
 
-         public List<Transaction> GetTransactionHistory(int pageNumber, int pageSize)
+        public List<Transaction> GetTransactionHistory(int pageNumber, int pageSize)
         {
             return TransactionHistory
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
         }
+    }
+
+    // Classe Transaction para representar uma transação
+    public class Transaction
+    {
+        public decimal Amount { get; set; }
+        public DateTime Date { get; set; }
+        public string Type { get; set; } // "Deposit" ou "Withdrawal"
     }
 }
