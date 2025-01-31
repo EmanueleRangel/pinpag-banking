@@ -1,12 +1,13 @@
-// CPFValidation.cs
 using System.Text.RegularExpressions;
 
-public static class CPFValidation
+namespace YourProject.Services
 {
-    // Method to validate CPF format
-    public static bool Validate(string cpf)
+    public static class CPFValidation
     {
-        var regex = new Regex(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$");
-        return regex.IsMatch(cpf);
+        public static bool Validate(string cpf)
+        {
+            var regex = new Regex(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$");
+            return regex.IsMatch(cpf);
+        }
     }
 }
