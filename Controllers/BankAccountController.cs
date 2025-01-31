@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using YourProject.Models;
-using YourProject.DTO;
-using YourProject.Services;
+using pinpag-banking.Models;
+using pinpag-banking.DTO;
+using pinpag-banking.Services;
 using System;
 using System.Collections.Generic;
 
-namespace YourProject.Controllers
+namespace pinpag-banking.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -19,7 +19,6 @@ namespace YourProject.Controllers
             _bankAccountService = bankAccountService;
         }
 
-        // Endpoint para realizar depósito
         [HttpPost("deposit/{cpf}")]
         public IActionResult Deposit(string cpf, [FromBody] BankAccountTransactionDTO transactionDto)
         {
@@ -34,7 +33,6 @@ namespace YourProject.Controllers
             }
         }
 
-        // Endpoint para realizar saque
         [HttpPost("withdraw/{cpf}")]
         public IActionResult Withdraw(string cpf, [FromBody] BankAccountTransactionDTO transactionDto)
         {
@@ -49,7 +47,24 @@ namespace YourProject.Controllers
             }
         }
 
-        // Endpoint para obter a conta bancária
+        [HttpGet("transactions/{cpf}")]
+        public IActionResult GetTransactionHistory(string cpf)
+        {
+            var history = _bankAccountService.GetTransactionHistory(cpf);
+            if (history == null || history.Count == 0)
+            {
+                return NotFound(new { message = "No transactions found for this account." });
+            }
+            return Ok(history);
+        }
+
+        [HttpGet("report/{cpf}")]
+        public IActionResult GetTransactionReport(string cpf, [FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        {
+            var report = _bankAccountService.GetTransactionReport(cpf, startDate, endDate);
+            return Ok(report);
+        }
+
         [HttpGet("{cpf}")]
         public IActionResult GetAccount(string cpf)
         {

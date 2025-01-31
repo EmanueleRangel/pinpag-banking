@@ -1,0 +1,36 @@
+# Banking System API
+
+Este é um sistema de **conta bancária** simples, construído com **ASP.NET Core**. Ele permite criar contas bancárias, realizar depósitos e saques, consultar saldo e visualizar o histórico de transações. O sistema também oferece relatórios simples sobre transações.
+
+## Funcionalidades
+
+1. **Criar Conta Bancária**:
+   - Endpoint para criar uma conta bancária com nome do cliente, CPF (validado) e saldo inicial (opcional).
+
+2. **Movimentações Financeiras**:
+   - Depósito: Permite depositar valores em uma conta existente.
+   - Saque: Permite realizar saques, com validação de saldo suficiente.
+
+3. **Histórico de Transações**:
+   - Armazena as transações realizadas (depósitos e saques) com tipo, data/hora e valor.
+
+4. **Consultas**:
+   - Consulta o saldo atual de uma conta.
+   - Lista as transações realizadas por uma conta específica com paginação.
+   - Relatório de transações de um período (ex: último dia).
+
+## Requisitos
+
+- **.NET Core 5.0** ou superior.
+- **Docker** (opcional, para rodar a aplicação em containers).
+- **SQL Server** ou **Banco de Dados Simulado** (dependendo de sua configuração).
+
+## Iniciar o Projeto
+
+### Rodando o projeto localmente
+
+1. **Clonar o repositório**:
+   Clone este repositório para o seu computador.
+   ```bash
+   git clone https://github.com/usuario/nome-do-repositorio.git
+   cd nome-do-repositorio

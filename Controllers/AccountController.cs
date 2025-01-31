@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using YourProject.Models;
-using YourProject.Services;
+using pinpag-banking.Models;
+using pinpag-banking.Services;
 using System;
 using System.Collections.Generic;
 
-namespace YourProject.Controllers
+namespace pinpag-banking.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

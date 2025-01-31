@@ -40,5 +40,15 @@ namespace YourProject.Services
         {
             _bankAccounts.Add(account);
         }
+
+        public class BankAccountTransactionDTO
+        {
+            public decimal Amount { get; set; }
+        }
+
+        public class TransactionHistoryDTO
+    {
+        public int PageNumber { get; set; } = 1;
+        public int PageSize { get; set; } = 10;
     }
 }

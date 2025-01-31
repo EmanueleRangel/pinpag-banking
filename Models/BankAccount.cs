@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace YourProject.Models
+namespace pinpag-banking.Models
 {
     public class BankAccount
     {
@@ -54,6 +54,19 @@ namespace YourProject.Models
                 throw new ArgumentException("Insufficient balance.");
             }
             Balance -= amount;
+        }
+
+        public List<Transaction> GetTransactionHistory()
+        {
+            return TransactionHistory;
+        }
+
+         public List<Transaction> GetTransactionHistory(int pageNumber, int pageSize)
+        {
+            return TransactionHistory
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
         }
     }
 }
