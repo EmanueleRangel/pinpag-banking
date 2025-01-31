@@ -1,0 +1,5 @@
+/home/manu/Desktop/projects/pinpag-banking/PinpagBanking.Tests/obj/Debug/net8.0/PinpagBanking.Tests.csproj.AssemblyReference.cache
+/home/manu/Desktop/projects/pinpag-banking/PinpagBanking.Tests/obj/Debug/net8.0/PinpagBanking.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/home/manu/Desktop/projects/pinpag-banking/PinpagBanking.Tests/obj/Debug/net8.0/PinpagBanking.Tests.AssemblyInfoInputs.cache
+/home/manu/Desktop/projects/pinpag-banking/PinpagBanking.Tests/obj/Debug/net8.0/PinpagBanking.Tests.AssemblyInfo.cs
+/home/manu/Desktop/projects/pinpag-banking/PinpagBanking.Tests/obj/Debug/net8.0/PinpagBanking.Tests.csproj.CoreCompileInputs.cache
