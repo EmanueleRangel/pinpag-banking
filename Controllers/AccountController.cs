@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace pinpag-banking.Controllers
 {
-    [Route("api/[controller]")]
+     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -34,12 +35,5 @@ namespace pinpag-banking.Controllers
             }
             return Ok(account);
         }
-    }
-
-    public class AccountDTO
-    {
-        public string ClientName { get; set; }
-        public string CPF { get; set; }
-        public decimal InitialBalance { get; set; }
     }
 }

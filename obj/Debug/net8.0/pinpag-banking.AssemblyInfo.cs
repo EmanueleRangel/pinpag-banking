@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pinpag-banking")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24d2ebd01a57039a4dd02aefb6f161a3d101c8e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+342fd6f21171567dde423ba618fcf5da9d45ab46")]
 [assembly: System.Reflection.AssemblyProductAttribute("pinpag-banking")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pinpag-banking")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
