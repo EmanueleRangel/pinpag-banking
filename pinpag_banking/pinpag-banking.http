@@ -1,0 +1,6 @@
+@pinpag_banking_HostAddress = http://localhost:5247
+
+GET {{pinpag_banking_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
