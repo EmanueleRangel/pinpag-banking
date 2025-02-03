@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using pinpag_banking.Models;
-using pinpag_banking.DTO;
+using pinpag_banking.Services;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,6 @@ namespace pinpag_banking.Controllers
     [ApiController]
     public class BankAccountController : ControllerBase
     {
-        private static List<BankAccount> bankAccounts = new List<BankAccount>();
         private readonly BankAccountService _bankAccountService;
 
         public BankAccountController(BankAccountService bankAccountService)
@@ -49,25 +48,35 @@ namespace pinpag_banking.Controllers
         [HttpGet("transactions/{cpf}")]
         public IActionResult GetTransactionHistory(string cpf)
         {
-            var history = _bankAccountService.GetTransactionHistory(cpf);
-            if (history == null || history.Count == 0)
+            try
             {
-                return NotFound(new { message = "No transactions found for this account." });
+                var history = _bankAccountService.GetTransactionHistory(cpf);
+                return Ok(history);
             }
-            return Ok(history);
+            catch (ArgumentException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
 
         [HttpGet("report/{cpf}")]
         public IActionResult GetTransactionReport(string cpf, [FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
-            var report = _bankAccountService.GetTransactionReport(cpf, startDate, endDate);
-            return Ok(report);
+            try
+            {
+                var report = _bankAccountService.GetTransactionReport(cpf, startDate, endDate);
+                return Ok(report);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpGet("{cpf}")]
         public IActionResult GetAccount(string cpf)
         {
-            var account = bankAccounts.Find(acc => acc.CPF == cpf);
+            var account = _bankAccountService.GetAccountByCpf(cpf);
             if (account == null)
             {
                 return NotFound(new { message = "Account not found." });

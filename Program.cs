@@ -1,22 +1,20 @@
-using System;
-using YourProject.Models;
-using YourProject.Services;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-public class Program
+namespace pinpag_banking
 {
-    public static void Main()
+    public class Program
     {
-        try
+        public static void Main(string[] args)
         {
-            var account = new Account("John Silva", "123.456.789-00", 500);
-            account.DisplayAccountInfo();
+            CreateHostBuilder(args).Build().Run();
+        }
 
-            var duplicateAccount = new Account("Maria Oliveira", "123.456.789-00", 1000);
-            duplicateAccount.DisplayAccountInfo();
-        }
-        catch (ArgumentException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-        }
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }

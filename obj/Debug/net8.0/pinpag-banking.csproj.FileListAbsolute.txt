@@ -1,8 +1,0 @@
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.csproj.AssemblyReference.cache
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.GeneratedMSBuildEditorConfig.editorconfig
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.AssemblyInfoInputs.cache
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.AssemblyInfo.cs
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.csproj.CoreCompileInputs.cache
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.MvcApplicationPartsAssemblyInfo.cs
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.MvcApplicationPartsAssemblyInfo.cache
-/home/manu/Desktop/projects/pinpag-banking/obj/Debug/net8.0/pinpag-banking.sourcelink.json

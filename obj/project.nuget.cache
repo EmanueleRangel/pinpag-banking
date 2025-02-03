@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hl8iA42CuJcqEAnmk9YY4+XjC1Td5jN86MwSpPEuq5i4LCGF7HIJT4CZvx3SiKPT0jrfHW16uoDHNqRQ6a9cmg==",
+  "dgSpecHash": "D5Al6yeMm5zPsxHuCDhVYy++ZjgSpu6GMxsBO0bFS417DNdOuZoDrBFi1G72EVZviwXdjbZ2CAp0G7aq6VhK2w==",
   "success": true,
-  "projectFilePath": "/home/manu/Desktop/projects/pinpag-banking/pinpag-banking.csproj",
+  "projectFilePath": "/home/manu/Desktop/projects/pinpag_banking/pinpag_banking.csproj",
   "expectedPackageFiles": [
     "/home/manu/.nuget/packages/microsoft.aspnetcore.openapi/8.0.12/microsoft.aspnetcore.openapi.8.0.12.nupkg.sha512",
     "/home/manu/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

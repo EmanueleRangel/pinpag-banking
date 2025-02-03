@@ -725,13 +725,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/manu/Desktop/projects/pinpag-banking/pinpag-banking.csproj",
-      "projectName": "pinpag-banking",
-      "projectPath": "/home/manu/Desktop/projects/pinpag-banking/pinpag-banking.csproj",
+      "projectUniqueName": "/home/manu/Desktop/projects/pinpag_banking/pinpag_banking.csproj",
+      "projectName": "pinpag_banking",
+      "projectPath": "/home/manu/Desktop/projects/pinpag_banking/pinpag_banking.csproj",
       "packagesPath": "/home/manu/.nuget/packages/",
-      "outputPath": "/home/manu/Desktop/projects/pinpag-banking/obj/",
+      "outputPath": "/home/manu/Desktop/projects/pinpag_banking/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "/home/manu/Desktop/projects/pinpag_banking/nuget.config",
         "/home/manu/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [

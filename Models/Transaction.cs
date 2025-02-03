@@ -1,6 +1,6 @@
 using System;
 
-namespace YourProject.Models
+namespace pinpag_banking.Models
 {
     public class Transaction
     {

@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace YourProject.Services
+namespace pinpag_banking.Services
 {
     public static class CPFValidation
     {
