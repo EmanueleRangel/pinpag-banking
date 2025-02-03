@@ -1,8 +1,8 @@
 using System;
-using YourProject.Services;
+using pinpag_banking.Services;
 using System.Collections.Generic;
 
-namespace YourProject.Models
+namespace pinpag_banking.Models
 {
     public class Account
     {

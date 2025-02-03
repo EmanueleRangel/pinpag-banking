@@ -1,7 +1,7 @@
 using System;
 using Xunit;
-using YourProject.Models;
-using YourProject.Services;
+using pinpag_banking.Models;
+using pinpag_banking.Services;
 
 namespace PinpagBanking.Tests
 {

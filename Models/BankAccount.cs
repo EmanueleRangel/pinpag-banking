@@ -43,7 +43,6 @@ namespace pinpag_banking.Models
                 throw new ArgumentException("Deposit amount must be greater than 0.");
             }
             Balance += amount;
-            // Adicionando transação de depósito
             TransactionHistory.Add(new Transaction { Amount = amount, Date = DateTime.Now, Type = "Deposit" });
         }
 
@@ -58,7 +57,6 @@ namespace pinpag_banking.Models
                 throw new ArgumentException("Insufficient balance.");
             }
             Balance -= amount;
-            // Adicionando transação de saque
             TransactionHistory.Add(new Transaction { Amount = amount, Date = DateTime.Now, Type = "Withdrawal" });
         }
 
@@ -74,13 +72,5 @@ namespace pinpag_banking.Models
                 .Take(pageSize)
                 .ToList();
         }
-    }
-
-    // Classe Transaction para representar uma transação
-    public class Transaction
-    {
-        public decimal Amount { get; set; }
-        public DateTime Date { get; set; }
-        public string Type { get; set; } // "Deposit" ou "Withdrawal"
     }
 }

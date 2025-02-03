@@ -1,9 +1,9 @@
-using YourProject.Models;
+using pinpag_banking.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace YourProject.Services
+namespace pinpag_banking.Services
 {
     public class BankAccountService
     {
@@ -71,7 +71,16 @@ namespace YourProject.Services
 
         public void AddAccount(BankAccount account)
         {
+            if (_bankAccounts.Any(a => a.CPF == account.CPF))
+            {
+                throw new ArgumentException("An account with this CPF already exists.");
+            }
             _bankAccounts.Add(account);
+        }
+
+        public BankAccount GetAccountByCpf(string cpf)
+        {
+            return _bankAccounts.FirstOrDefault(acc => acc.CPF == cpf);
         }
     }
 }

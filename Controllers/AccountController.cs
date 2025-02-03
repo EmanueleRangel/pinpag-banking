@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using pinpag_banking.Models;  // Adicionando o namespace correto para Account
+using pinpag_banking.DTOs;    // Adicionando o namespace correto para AccountDTO
 using System;
 using System.Collections.Generic;
 
-namespace pinpag-banking.Controllers
+namespace pinpag_banking.Controllers
 {
-     [Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
