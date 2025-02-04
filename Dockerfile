@@ -1,14 +1,14 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 8000
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+WORKDIR /
 COPY ["pinpag_banking.csproj", "./"]
-RUN dotnet restore "pinpag_banking/pinpag_banking.csproj"
+RUN dotnet restore "/pinpag_banking.csproj"
 
 COPY . .
-WORKDIR "/src/pinpag_banking"
+WORKDIR "/pinpag_banking"
 RUN dotnet build -c Release -o /app/build
 
 FROM build AS publish
